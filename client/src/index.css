@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg-primary: #1a1a2e;
+  --color-bg-secondary: #16213e;
+  --color-bg-card: #0f3460;
+  --color-accent-mint: #00f5d4;
+  --color-accent-lavender: #c77dff;
+  --color-accent-coral: #ff6b6b;
+  --color-accent-yellow: #ffd60a;
+  --color-text-primary: #e8e8e8;
+  --color-text-muted: #a0a0b0;
+}
+
+:root {
+  --bg-primary: #1a1a2e;
+  --bg-secondary: #16213e;
+  --bg-card: #0f3460;
+  --accent-mint: #00f5d4;
+  --accent-lavender: #c77dff;
+  --accent-coral: #ff6b6b;
+  --accent-yellow: #ffd60a;
+  --text-primary: #e8e8e8;
+  --text-muted: #a0a0b0;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+.retro-title {
+  text-shadow: 
+    3px 3px 0px #c77dff,
+    6px 6px 0px #ff6b6b;
+}
+
+.font-retro {
+  font-family: 'Press Start 2P', cursive;
+}
