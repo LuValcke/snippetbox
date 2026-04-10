@@ -18,7 +18,7 @@ function fetchSnippets() {
 }
 
 function deleteSnippet(id: number) {
-  fetch(`/api/snippets/${id}`, { method: 'DELETE' })
+  fetch(`${API_URL}/api/snippets/${id}`, { method: 'DELETE' })
     .then(res => {
       if (res.ok) {
         setSnippets(prev => prev.filter(s => s.id !== id))
