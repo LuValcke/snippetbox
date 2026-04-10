@@ -3,6 +3,8 @@ import React, { useState } from 'react'
 import { Save, CirclePlus, Pencil } from 'lucide-react';
 import type { Snippet } from '../types';
 
+const API_URL = import.meta.env.VITE_API_URL || ''
+
 type SnippetForm = {
   title: string
   content: string
@@ -21,7 +23,7 @@ function SnippetForm({ onSnippetSaved, editData, setEditData }: { onSnippetSaved
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
     if (editData) {
-      fetch(`/api/snippets/${editData.id}`, {
+      fetch(`${API_URL}/api/snippets/${editData.id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(snippetForm),
@@ -38,7 +40,7 @@ function SnippetForm({ onSnippetSaved, editData, setEditData }: { onSnippetSaved
         })
       return
     }
-    fetch('/api/snippets', {
+    fetch(`${API_URL}/api/snippets`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(snippetForm),

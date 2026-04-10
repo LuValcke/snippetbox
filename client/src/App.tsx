@@ -4,13 +4,15 @@ import type { Snippet } from "./types"
 import SnippetList from "./components/SnippetList"
 import SnippetForm from "./components/SnippetForm"
 
+const API_URL = import.meta.env.VITE_API_URL || ''
+
 function App() {
   const [snippets, setSnippets] = useState<Snippet[]>([])
   const [snippetToEdit, setSnippetToEdit] = useState<Snippet | null>(null)
   const [searchQuery, setSearchQuery] = useState('')
 
 function fetchSnippets() {
-  fetch('/api/snippets')
+  fetch(`${API_URL}/api/snippets`)
     .then(res => res.json())
     .then(data => setSnippets(data))
 }
